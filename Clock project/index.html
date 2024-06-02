@@ -23,8 +23,17 @@
             align-items: center;
             min-height: 100vh;
             background-color: rgb(20, 20, 20);
+            margin: 0;
+        }
+        #clock {
+            font-size: 5vw;
         }
 
+        @media (max-width: 600px) {
+            #clock {
+                font-size: 10vw;
+            }
+        }
         .container {
             display: flex;
             justify-content: center;
@@ -38,8 +47,8 @@
 
         .clock {
             position: relative;
-            width: 500px;
-            height: 500px;
+            width: 470px;
+            height: 470px;
             background-color: rgb(12, 12, 12);
             border-radius: 50%;
             box-shadow: 10px 50px 70px rgb(0, 0, 0),
@@ -72,7 +81,7 @@
         }
 
         .clock span b {
-            font-size: 2em;
+            font-size: 2.2em;
             opacity: 75%;
             font-weight: 600;
             display: inline-block;
@@ -110,7 +119,7 @@
         /* Digital clock style */
         .digital {
             position: relative;
-            width: 350px;
+            width: 370px;
             height: 200px;
             border-radius: 30px;
             background-color: rgb(12, 12, 12);
@@ -128,7 +137,7 @@
             margin-bottom: 40px;
             display: flex;
             padding: 10px 20px;
-            font-size: 2em;
+            font-size: 2.2em;
             color: #fff;
             opacity: 75%;
         }
@@ -222,6 +231,8 @@
             //Convert 24 hr to 12 hr
             if(h>12){
                 h=h-12;
+            }else if(h==0||h==12){
+                h=12;
             }
 
             //add zero before single digit no
